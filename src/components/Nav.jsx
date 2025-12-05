@@ -1,15 +1,101 @@
 import React from "react";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
 function Nav() {
+  const [currentSlide, setcurrentSlide] = useState(1);
+  function nextSlide() {
+    setcurrentSlide((prev) => {
+      return prev === 3 ? 1 : prev + 1;
+    });
+  }
+  function prevSlide() {
+    setcurrentSlide((prev) => {
+      return prev === 1 ? 3 : prev - 1;
+    });
+  }
+  useEffect(function () {
+    const timer = setInterval(() => {
+      setcurrentSlide((prev) => {
+        return (prev % 3) + 1;
+      });
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <>
-      <img src="/hero-slider-1.jpg" alt="" className="-z-40 absolute" />
+    <section className="relative h-screen w-full overflow-hidden">
+      <button
+        class="
+    flex items-center justify-center 
+    p-2.5  duration-300 
+     text-gold-50 hover:bg-gold-50
+     hover:text-black
+    shadow-lg absolute right-15 top-1/2 rotate-45 border-2
+    border-gold-50 z-10 cursor-pointer
+"
+        onClick={nextSlide}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          className="w-6 h-6 -rotate-45"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+          />
+        </svg>
+      </button>
+      <button
+        class="
+   flex items-center justify-center 
+    p-2.5   duration-300 
+     text-gold-50 hover:bg-gold-50
+     hover:text-black
+    shadow-lg absolute left-15 top-1/2 rotate-45 border-2
+    border-gold-50 cursor-pointer z-10 cursor-pointesr
+    "
+        onClick={prevSlide}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          className="w-6 h-6 -rotate-45"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+      </button>
+      <img
+        src={`/hero-slider-${currentSlide}.jpg`}
+        alt=""
+        className="-z-40 absolute animate-scale object-cover h-full w-full "
+      />
+      <div className="text-black w-[110px] h-[110px] py-1 px-4 absolute top-9/12 right-20 m bg-gold-50">
+        <img
+          src="/features-icon-2.png"
+          alt="Features Icon"
+          className=" filter invert sepia-0 saturate-0 brightness-0"
+        />
+        <p className="text-black font-bold text-[12px] p-1 text-center">
+          BOOK A <br />
+          TABLE
+        </p>
+      </div>
+      <div className="-z-10 w-[110px] h-[110px] absolute top-9/12 right-20 py-1 px-4  border-2 border-gold-50 animate-rotate"></div>
       <div className=" flex px-5 py-2 justify-between border-b-2 border-gold-400 text-white">
         <div className="flex">
-          <div
-            className=" mr-8 flex
-        "
-          >
+          <div className="  mr-8 flex animate-down">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +109,9 @@ function Nav() {
             </span>
             <p className="">Restaurant St, Delicious City, London 9578, UK</p>
           </div>
-          <div className="h-2 w-2 m-3 rotate-45 border-2"></div>
+          <div className="h-2 w-2 m-3 rotate-45 border-2 border-gold-50"></div>
 
-          <div className=" ml-8 flex">
+          <div className=" ml-8 flex animate-down">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +127,7 @@ function Nav() {
           </div>
         </div>
         <div className="flex">
-          <div className="mr-8 flex">
+          <div className="mr-8 flex animate-down">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,9 +142,9 @@ function Nav() {
             <div>09014994115</div>
           </div>
 
-          <div className="h-2 w-2 m-3 rotate-45 border-2 "></div>
+          <div className="h-2 w-2 m-3 rotate-45 border-2 border-gold-50 "></div>
 
-          <div className="ml-8 flex">
+          <div className="ml-8 flex animate-down">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,15 +162,15 @@ function Nav() {
       </div>
       <div>
         <div className="flex p-5 justify-between">
-          <img src="/logo.svg" alt="event" />
-          <ul className="flex text-white pt-7 space-x-3">
+          <img src="/logo.svg" alt="event" className="animate-left1" />
+          <ul className="flex text-white pt-7 space-x-3 animate-down">
             <li className="text-[19px]">Home</li>
             <li className="text-[19px]">Menus</li>
             <li className="text-[19px]">About Us</li>
             <li className="text-[19px]">Our chefs</li>
             <li className="text-[19px]">Contact</li>
           </ul>
-          <button class="btnclick group relative z-10 hidden h-12 w-32 cursor-pointer overflow-hidden rounded-md border-none bg-gold-50 p-2 text-xs font-bold text-black sm:block">
+          <button class="animate-right1 btnclick group relative z-10 hidden h-12 w-32 cursor-pointer overflow-hidden rounded-md border-none bg-gold-50 p-2 text-xs font-bold text-black sm:block">
             Find a Table!
             <span class="absolute -left-2 -top-8 h-32 w-36 origin-left rotate-12 scale-x-0 transform bg-black transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>
             <span class="absolute -left-2 -top-8 h-32 w-36 origin-left rotate-12 scale-x-0 transform bg-black transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700"></span>
@@ -94,75 +180,60 @@ function Nav() {
             </span>
           </button>
         </div>
-        <div className="flex flex-col items-center  mt-6 ">
-         
-          <p className="text-xl text-gold-50">Tradational & Hygine</p>
+        <div className="flex flex-col items-center  mt-6  animate-top1">
+          <p className="text-xl text-gold-50 uppercase">Tradational & Hygine</p>
           <img src="/separator.svg" alt="logo" className="h-7 w-32 mt-2 mb-2" />
         </div>
-        <div className="flex flex-col items-center space-y-14 mt-6 mb-20">
-          <button
-            class="
-    flex items-center justify-center 
-    p-2.5  transition duration-300 
-     text-gold-50 hover:bg-gold-50
-     hover:text-black
-    shadow-lg absolute right-20 top-1/2 rotate-45 border-2
-    border-gold-50
-"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2.5"
-              stroke="currentColor"
-              class="w-6 h-6 -rotate-45"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </button>
-          <button
-            class="
-   flex items-center justify-center 
-    p-2.5  transition duration-300 
-     text-gold-50 hover:bg-gold-50
-     hover:text-black
-    shadow-lg absolute left-20 top-1/2 rotate-45 border-2
-    border-gold-50
-"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2.5"
-              stroke="currentColor"
-              class="w-6 h-6 -rotate-45"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-              />
-            </svg>
-          </button>
-          <p className="text-8xl text-white font-bold text-center">
-            Where every flavor <br />
-            tells a story
-          </p>
-          <p className="text-3xl text-white font-bold mt-4 mb-8">
-            Come with family & feel the joy of mouthwatering food
-          </p>
-          <button class="inline-flex items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
-            View Our Menu
-          </button>
-        </div>
+
+        {currentSlide === 1 && (
+          <div className="animate-top1 flex flex-col items-center space-y-14 mt-6 mb-20">
+            <p className="text-8xl text-white font-bold text-center">
+              For the love of <br />
+              delicious food
+            </p>
+
+            <p className="text-3xl text-white font-bold mt-4 mb-8">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+            <button class="inline-flex items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
+              View Our Menu
+            </button>
+          </div>
+        )}
+
+        {currentSlide === 2 && (
+          <div className="animate-top1 flex flex-col items-center space-y-14 mt-6 mb-20">
+            <p className="text-8xl text-white font-bold text-center">
+              Flavors Inspired by <br />
+              the Seasons
+            </p>
+
+            <p className="text-3xl text-white font-bold mt-4 mb-8">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+            <button class="inline-flex items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
+              View Our Menu
+            </button>
+          </div>
+        )}
+
+        {currentSlide === 3 && (
+          <div className="animate-top1 flex flex-col items-center space-y-14 mt-6 mb-20">
+            <p className="text-8xl text-white font-bold text-center">
+              Where every flavor <br />
+              tells a story
+            </p>
+
+            <p className="text-3xl text-white font-bold mt-4 mb-8">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+            <button class="inline-flex items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
+              View Our Menu
+            </button>
+          </div>
+        )}
       </div>
-    </>
+    </section>
   );
 }
 
