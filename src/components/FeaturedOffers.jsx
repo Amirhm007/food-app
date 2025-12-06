@@ -3,8 +3,9 @@ function FeaturedOffers() {
   return (
     <section
       className="
-   bg-silver-250 h-screen overflow-hidden flex justify-between relative"
+   bg-silver-250 h-screen  flex justify-between relative"
     >
+      <img src="/shape-9.png" alt="" className="absolute right-0 -bottom-44"/>
       <img
         src="/badge-1.png"
         alt=""

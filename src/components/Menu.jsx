@@ -13,6 +13,7 @@ function Menu() {
           alt=""
           className="absolute  bottom-0 right-0 animate-Floating1"
         />
+
         <div className="flex flex-col items-center  mt-6  animate-top1">
           <p className="text-xl text-gold-50 uppercase">Special Selection</p>
           <img src="/separator.svg" alt="logo" className="h-7 w-32 mt-2 mb-2" />
@@ -20,8 +21,8 @@ function Menu() {
         <p className="text-6xl z-20">Delicious Menu</p>
 
         <div className=" flex z-20">
-          <div className="border-r-2 border-silver-50 pr-6 mr-16 flex flex-col items-start justify-start space-y-12">
-            <div className="flex justify-between space-x-5 items-center w-full">
+          <div className="border-r border-silver-50 pr-6 mr-16 flex flex-col items-start justify-start space-y-12">
+            <div className="flex justify-between space-x-5 items-center w-full group hover:-translate-x-6 duration-300">
               <div className="">
                 <img src="/menu-1.png" alt="" />
               </div>
@@ -41,7 +42,7 @@ function Menu() {
               </div>
             </div>
 
-            <div className="flex justify-between space-x-5 items-center w-full">
+            <div className="flex justify-between space-x-5 items-center w-full group hover:-translate-x-6 duration-300">
               <div className="">
                 <img src="/menu-2.png" alt="" />
               </div>
@@ -59,7 +60,7 @@ function Menu() {
               </div>
             </div>
 
-            <div className="flex justify-between space-x-5 items-center w-full">
+            <div className="flex justify-between space-x-5 items-center w-full group hover:-translate-x-6 duration-300">
               <div className="">
                 <img src="/menu-3.png" alt="" />
               </div>
@@ -79,7 +80,7 @@ function Menu() {
           </div>
 
           <div className="flex flex-col items-center space-y-12">
-            <div className="flex justify-between space-x-5 items-center w-full">
+            <div className="flex justify-between space-x-5 items-center w-full group hover:translate-x-6 duration-300">
               <div className="">
                 <img src="/menu-4.png" alt="" />
               </div>
@@ -97,14 +98,14 @@ function Menu() {
               </div>
             </div>
 
-            <div className="flex justify-between space-x-5 items-center w-full">
+            <div className="flex justify-between space-x-5 items-center w-full group hover:translate-x-6 duration-300">
               <div className="">
                 <img src="/menu-5.png" alt="" />
               </div>
               <div className="flex flex-col justify-between flex-1">
                 <div className="flex items-center justify-between space-x-5">
                   <p className="text-[18px] uppercase">olivas rellenas</p>
-                  <p className="bg-gold-50 px-4 text-[15px] py-0.5 text-gray-700">
+                  <p className="bg-gold-50 px-2 text-[15px] py-0.5 text-gray-700">
                     NEW
                   </p>
                   <div className="flex-1 border-b border-t border-gray-700 w-16 mx-2 h-2"></div>
@@ -117,7 +118,7 @@ function Menu() {
               </div>
             </div>
 
-            <div className="flex justify-between space-x-5 items-center w-full">
+            <div className="flex justify-between space-x-5 items-center w-full group hover:translate-x-6 duration-300">
               <div className="">
                 <img src="/menu-6.png" alt="" />
               </div>
@@ -136,11 +137,11 @@ function Menu() {
             </div>
           </div>
         </div>
-        <p>
+        <p className="z-10">
           During winter daily from <span className="text-gold-50">7:00</span> pm
-          to <span className="text-gold-50">9:00 pm</span>{" "}
+          to <span className="text-gold-50">9:00 pm</span>
         </p>
-        <button class="inline-flex uppercase items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
+        <button class="z-10 inline-flex uppercase items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
           View Menu
         </button>
       </div>
