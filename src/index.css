@@ -26,7 +26,6 @@
   --animate-rotate: rotate 14s linear infinite;
   --animate-Floating1: Floating1 6s linear infinite;
   --animate-Floating2: Floating2 3s linear infinite;
-
   @keyframes down {
     0% {
       opacity: 0;
@@ -105,4 +104,5 @@
       transform: translateY(0);
     }
   }
+ 
 }
