@@ -97,7 +97,7 @@ function Section2Tike() {
             <textarea
               type="text"
               placeholder={"Message"}
-              className="border resize-none h-36 focus:border-gold-50 focus:appearance-none outline-none appearance-none border-silver-200 bg-silver-150 p-3 w-[652px]"
+              className="border resize-none h-36  focus:border-gold-50 focus:appearance-none outline-none appearance-none border-silver-200 bg-silver-150 p-3 w-[652px]"
             ></textarea>
             <button className="w-full inline-flex items-center justify-center px-6 py-3 rounded-md transition duration-300 ease-in-out border border-gold-50 text-gold-50 bg-transparent hover:bg-gold-50 hover:text-black text-base font-bold cursor-pointer">
               BOOK A TABLE
@@ -111,7 +111,7 @@ function Section2Tike() {
               className="absolute h-full w-full top-0 left-0  object-cover z-30"
             />
 
-            <div className="relative text-silver-250 flex flex-col justify-between items-center text-xl z-40">
+            <div className="relative oklch(43.9% 0 0)  flex flex-col justify-between items-center text-xl z-40">
               <h3 className="text-5xl text-white">
                 CONTACT <br />
                 US

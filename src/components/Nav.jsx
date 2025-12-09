@@ -164,11 +164,36 @@ function Nav() {
         <div className="flex p-5 justify-between">
           <img src="/logo.svg" alt="event" className="animate-left1" />
           <ul className="flex text-white pt-7 space-x-3 animate-down">
-            <li className="text-[19px]">Home</li>
-            <li className="text-[19px]">Menus</li>
-            <li className="text-[19px]">About Us</li>
-            <li className="text-[19px]">Our chefs</li>
-            <li className="text-[19px]">Contact</li>
+            <li
+              className="text-[19px] relative p-2 duration-150 after:absolute after:bottom-0 after:right-8 after:border-y-2 after:border-gold-50 after:p-[2px]  
+        after:w-0 after:opacity-0 after:duration-300 after:content-[''] hover:after:scale-x-[13] hover:after:opacity-100 hover:after:text-gold-50"
+            >
+              Home
+            </li>
+            <li
+              className="text-[19px] relative p-2 duration-150 after:absolute after:bottom-0 after:right-9 after:border-y-2 after:border-gold-50 after:p-[2px]  
+        after:w-0 after:opacity-0 after:duration-300 after:content-[''] hover:after:scale-x-[14.5] hover:after:opacity-100 hover:after:text-gold-50"
+            >
+              Menus
+            </li>
+            <li
+              className="text-[19px] relative p-2 duration-150 after:absolute after:bottom-0 after:right-12 after:border-y-2 after:border-gold-50 after:p-[2px]  
+        after:w-0 after:opacity-0 after:duration-300 after:content-[''] hover:after:scale-x-[19] hover:after:opacity-100 hover:after:text-gold-50"
+            >
+              About Us
+            </li>
+            <li
+              className="text-[19px] relative p-2 duration-150 after:absolute after:bottom-0 after:right-11 after:border-y-2 after:border-gold-50 after:p-[2px]  
+        after:w-0 after:opacity-0 after:duration-300 after:content-[''] hover:after:scale-x-[20] hover:after:opacity-100 hover:after:text-gold-50"
+            >
+              Our chefs
+            </li>
+            <li
+              className="text-[19px] relative p-2 duration-150 after:absolute after:bottom-0 after:right-9 after:border-y-2 after:border-gold-50 after:p-[2px]  
+        after:w-0 after:opacity-0 after:duration-300 after:content-[''] hover:after:scale-x-[17] hover:after:opacity-100 hover:after:text-gold-50"
+            >
+              Contact
+            </li>
           </ul>
           <button class="animate-right1 btnclick group relative z-10 hidden h-12 w-32 cursor-pointer overflow-hidden rounded-md border-none bg-gold-50 p-2 text-xs font-bold text-black sm:block">
             Find a Table!
